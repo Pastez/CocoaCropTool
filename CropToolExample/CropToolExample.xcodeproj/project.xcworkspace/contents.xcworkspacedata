@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CropTool.xcodeproj">
+      location = "self:CropToolExample.xcodeproj">
    </FileRef>
 </Workspace>

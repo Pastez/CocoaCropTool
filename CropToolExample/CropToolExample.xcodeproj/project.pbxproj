@@ -21,18 +21,18 @@
 		BC00A71917B23458008A190E /* testImg.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00A71817B23458008A190E /* testImg.png */; };
 		BC00A71F17B27F0E008A190E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00A71E17B27F0E008A190E /* Icon.png */; };
 		BC00A72117B27F11008A190E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00A72017B27F11008A190E /* Icon@2x.png */; };
-		BC00A72417B283DE008A190E /* PSCroopToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00A72317B283DE008A190E /* PSCroopToolView.m */; };
+		BC00A72717B28556008A190E /* PSCroopToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00A72617B28556008A190E /* PSCroopToolView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC00A6EC17B22454008A190E /* CropTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CropTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC00A6EC17B22454008A190E /* CropToolExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CropToolExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC00A6EF17B22454008A190E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BC00A6F117B22454008A190E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BC00A6F317B22454008A190E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BC00A6F717B22454008A190E /* CropTool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CropTool-Info.plist"; sourceTree = "<group>"; };
+		BC00A6F717B22454008A190E /* CropToolExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CropToolExample-Info.plist"; sourceTree = "<group>"; };
 		BC00A6F917B22454008A190E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BC00A6FB17B22454008A190E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BC00A6FD17B22454008A190E /* CropTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CropTool-Prefix.pch"; sourceTree = "<group>"; };
+		BC00A6FD17B22454008A190E /* CropToolExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CropToolExample-Prefix.pch"; sourceTree = "<group>"; };
 		BC00A6FE17B22454008A190E /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
 		BC00A6FF17B22454008A190E /* PSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
 		BC00A70117B22454008A190E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -44,8 +44,8 @@
 		BC00A71817B23458008A190E /* testImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImg.png; sourceTree = "<group>"; };
 		BC00A71E17B27F0E008A190E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		BC00A72017B27F11008A190E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
-		BC00A72217B283DE008A190E /* PSCroopToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCroopToolView.h; path = PSCropToolComponent/PSCroopToolView.h; sourceTree = SOURCE_ROOT; };
-		BC00A72317B283DE008A190E /* PSCroopToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCroopToolView.m; path = PSCropToolComponent/PSCroopToolView.m; sourceTree = SOURCE_ROOT; };
+		BC00A72517B28556008A190E /* PSCroopToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCroopToolView.h; path = ../../PSCropToolComponent/PSCroopToolView.h; sourceTree = "<group>"; };
+		BC00A72617B28556008A190E /* PSCroopToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCroopToolView.m; path = ../../PSCropToolComponent/PSCroopToolView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 		BC00A6ED17B22454008A190E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC00A6EC17B22454008A190E /* CropTool.app */,
+				BC00A6EC17B22454008A190E /* CropToolExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,10 +107,10 @@
 		BC00A6F617B22454008A190E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BC00A6F717B22454008A190E /* CropTool-Info.plist */,
+				BC00A6F717B22454008A190E /* CropToolExample-Info.plist */,
 				BC00A6F817B22454008A190E /* InfoPlist.strings */,
 				BC00A6FB17B22454008A190E /* main.m */,
-				BC00A6FD17B22454008A190E /* CropTool-Prefix.pch */,
+				BC00A6FD17B22454008A190E /* CropToolExample-Prefix.pch */,
 				BC00A71817B23458008A190E /* testImg.png */,
 				BC00A72017B27F11008A190E /* Icon@2x.png */,
 				BC00A71E17B27F0E008A190E /* Icon.png */,
@@ -124,8 +124,8 @@
 		BC00A71217B2247E008A190E /* PSCroopTool */ = {
 			isa = PBXGroup;
 			children = (
-				BC00A72217B283DE008A190E /* PSCroopToolView.h */,
-				BC00A72317B283DE008A190E /* PSCroopToolView.m */,
+				BC00A72517B28556008A190E /* PSCroopToolView.h */,
+				BC00A72617B28556008A190E /* PSCroopToolView.m */,
 			);
 			name = PSCroopTool;
 			sourceTree = "<group>";
@@ -133,9 +133,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC00A6EB17B22453008A190E /* CropTool */ = {
+		BC00A6EB17B22453008A190E /* CropToolExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC00A70F17B22454008A190E /* Build configuration list for PBXNativeTarget "CropTool" */;
+			buildConfigurationList = BC00A70F17B22454008A190E /* Build configuration list for PBXNativeTarget "CropToolExample" */;
 			buildPhases = (
 				BC00A6E817B22453008A190E /* Sources */,
 				BC00A6E917B22453008A190E /* Frameworks */,
@@ -145,9 +145,9 @@
 			);
 			dependencies = (
 			);
-			name = CropTool;
+			name = CropToolExample;
 			productName = CropTool;
-			productReference = BC00A6EC17B22454008A190E /* CropTool.app */;
+			productReference = BC00A6EC17B22454008A190E /* CropToolExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +160,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Pastez Design 2013 www.pastez.com";
 			};
-			buildConfigurationList = BC00A6E717B22453008A190E /* Build configuration list for PBXProject "CropTool" */;
+			buildConfigurationList = BC00A6E717B22453008A190E /* Build configuration list for PBXProject "CropToolExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -172,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC00A6EB17B22453008A190E /* CropTool */,
+				BC00A6EB17B22453008A190E /* CropToolExample */,
 			);
 		};
 /* End PBXProject section */
@@ -202,7 +202,7 @@
 				BC00A6FC17B22454008A190E /* main.m in Sources */,
 				BC00A70017B22454008A190E /* PSAppDelegate.m in Sources */,
 				BC00A70917B22454008A190E /* PSViewController.m in Sources */,
-				BC00A72417B283DE008A190E /* PSCroopToolView.m in Sources */,
+				BC00A72717B28556008A190E /* PSCroopToolView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,9 +280,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CropTool/CropTool-Prefix.pch";
-				INFOPLIST_FILE = "CropTool/CropTool-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CropTool/CropToolExample-Prefix.pch";
+				INFOPLIST_FILE = "CropTool/CropToolExample-Info.plist";
+				PRODUCT_NAME = CropToolExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -291,9 +291,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CropTool/CropTool-Prefix.pch";
-				INFOPLIST_FILE = "CropTool/CropTool-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CropTool/CropToolExample-Prefix.pch";
+				INFOPLIST_FILE = "CropTool/CropToolExample-Info.plist";
+				PRODUCT_NAME = CropToolExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -301,7 +301,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC00A6E717B22453008A190E /* Build configuration list for PBXProject "CropTool" */ = {
+		BC00A6E717B22453008A190E /* Build configuration list for PBXProject "CropToolExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC00A70D17B22454008A190E /* Debug */,
@@ -310,7 +310,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC00A70F17B22454008A190E /* Build configuration list for PBXNativeTarget "CropTool" */ = {
+		BC00A70F17B22454008A190E /* Build configuration list for PBXNativeTarget "CropToolExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC00A71017B22454008A190E /* Debug */,

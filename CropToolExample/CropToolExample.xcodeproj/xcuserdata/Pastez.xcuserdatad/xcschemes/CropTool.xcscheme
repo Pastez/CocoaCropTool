@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC00A6EB17B22453008A190E"
-               BuildableName = "CropTool.app"
-               BlueprintName = "CropTool"
-               ReferencedContainer = "container:CropTool.xcodeproj">
+               BuildableName = "CropToolExample.app"
+               BlueprintName = "CropToolExample"
+               ReferencedContainer = "container:CropToolExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC00A6EB17B22453008A190E"
-            BuildableName = "CropTool.app"
-            BlueprintName = "CropTool"
-            ReferencedContainer = "container:CropTool.xcodeproj">
+            BuildableName = "CropToolExample.app"
+            BlueprintName = "CropToolExample"
+            ReferencedContainer = "container:CropToolExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC00A6EB17B22453008A190E"
-            BuildableName = "CropTool.app"
-            BlueprintName = "CropTool"
-            ReferencedContainer = "container:CropTool.xcodeproj">
+            BuildableName = "CropToolExample.app"
+            BlueprintName = "CropToolExample"
+            ReferencedContainer = "container:CropToolExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC00A6EB17B22453008A190E"
-            BuildableName = "CropTool.app"
-            BlueprintName = "CropTool"
-            ReferencedContainer = "container:CropTool.xcodeproj">
+            BuildableName = "CropToolExample.app"
+            BlueprintName = "CropToolExample"
+            ReferencedContainer = "container:CropToolExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
