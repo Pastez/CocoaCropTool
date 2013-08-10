@@ -1,6 +1,6 @@
 //
 //  PSCroopToolView.m
-//  CropTool
+//  CroopTool
 //
 //  Created by Tomasz Kwolek on 07.08.2013.
 //  Copyright (c) 2013 Pastez Design 2013 www.pastez.com. All rights reserved.
@@ -11,18 +11,18 @@
 
 #define DEFAULT_OUTPUT_SIZE CGSizeMake(320, 480)
 #define DEFAULT_REQUIRED_FILL_FACTOR 1.0
-#define DEFAULT_CROP_AREA_FILL_FACTOR 0.95
-#define DEFAULT_CROP_AREA_DEFAULT_BORDER_WIDTH 2
-#define DEFAULT_CROP_AREA_DEFAULT_BORDER_COLOR [UIColor whiteColor].CGColor
+#define DEFAULT_CROOP_AREA_FILL_FACTOR 0.95
+#define DEFAULT_CROOP_AREA_DEFAULT_BORDER_WIDTH 2
+#define DEFAULT_CROOP_AREA_DEFAULT_BORDER_COLOR [UIColor whiteColor].CGColor
 #define DEFAULT_SHOW_QUEUE_INDICATOR YES
 
 @interface PSCroopToolView()
 {
     dispatch_queue_t creatingImageQueue;
     
-    float cropAreaScale;
-    CGSize cropAreaSize;
-    CGPoint cropAreaTL;
+    float croopAreaScale;
+    CGSize croopAreaSize;
+    CGPoint croopAreaTL;
     
     float lastScale;
     CGPoint lastPoint;
@@ -31,7 +31,7 @@
 
 @property (strong,nonatomic) UIImage *sourceImage;
 @property (strong,nonatomic) UIImageView *sourceImageView;
-@property (strong,nonatomic) CALayer *cropAreaLayer;
+@property (strong,nonatomic) CALayer *croopAreaLayer;
 
 @property (strong,nonatomic) UIActivityIndicatorView *imageProcessingIndicator;
 
@@ -46,7 +46,7 @@
         self.layer.masksToBounds = YES;
         self.showQueueActivitiIndicator = DEFAULT_SHOW_QUEUE_INDICATOR;
         self.outputSize                 = DEFAULT_OUTPUT_SIZE;
-        self.cropAreaFillFactor         = DEFAULT_CROP_AREA_FILL_FACTOR;
+        self.croopAreaFillFactor        = DEFAULT_CROOP_AREA_FILL_FACTOR;
         self.requiredFillFactor         = DEFAULT_REQUIRED_FILL_FACTOR;
     }
     return self;
@@ -57,7 +57,7 @@
     self.sourceImage = image;
     if (!_sourceImageView)
     {
-        creatingImageQueue = dispatch_queue_create("com.pas.imageCrop", 0);
+        creatingImageQueue = dispatch_queue_create("com.pas.imageCroop", 0);
         
         UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onPan:)];
         UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(onPinch:)];
@@ -105,13 +105,13 @@
 
 - (UIImage*)getOutputImage
 {
-    float sx = CGRectGetWidth(_sourceImageView.frame) / cropAreaSize.width;
-    float sy = CGRectGetHeight(_sourceImageView.frame) / cropAreaSize.height;
+    float sx = CGRectGetWidth(_sourceImageView.frame) / croopAreaSize.width;
+    float sy = CGRectGetHeight(_sourceImageView.frame) / croopAreaSize.height;
     float destWidth = sx * _outputSize.width;
     float destHeight = sy * _outputSize.height;
     _sourceImageView.layer.anchorPoint = CGPointMake(.5f, .5f);
-    float dx = (-cropAreaTL.x + CGRectGetMinX(_sourceImageView.frame)) * (_outputSize.width/cropAreaSize.width);
-    float dy = (-cropAreaTL.y + CGRectGetMinY(_sourceImageView.frame)) * (_outputSize.height/cropAreaSize.height);
+    float dx = (-croopAreaTL.x + CGRectGetMinX(_sourceImageView.frame)) * (_outputSize.width/croopAreaSize.width);
+    float dy = (-croopAreaTL.y + CGRectGetMinY(_sourceImageView.frame)) * (_outputSize.height/croopAreaSize.height);
     
     UIImage *outputImage;
     UIGraphicsBeginImageContext(_outputSize);
@@ -200,24 +200,24 @@
     if (_requiredFillFactor > 0.0) {
         [UIView animateWithDuration:0.4 animations:^{
             
-            float ffPxWidth = cropAreaSize.width * _cropAreaFillFactor * .5f;
-            float ffPxHeight = cropAreaSize.height * _cropAreaFillFactor * .5f;
+            float ffPxWidth = croopAreaSize.width * _croopAreaFillFactor * .5f;
+            float ffPxHeight = croopAreaSize.height * _croopAreaFillFactor * .5f;
             CGPoint center = _sourceImageView.center;
-            if( CGRectGetMinX(_sourceImageView.frame) > CGRectGetMaxX(_cropAreaLayer.frame)-ffPxWidth)
+            if( CGRectGetMinX(_sourceImageView.frame) > CGRectGetMaxX(_croopAreaLayer.frame)-ffPxWidth)
             {
-                center.x -= CGRectGetMinX(_sourceImageView.frame) - (CGRectGetMaxX(_cropAreaLayer.frame)-ffPxWidth);
+                center.x -= CGRectGetMinX(_sourceImageView.frame) - (CGRectGetMaxX(_croopAreaLayer.frame)-ffPxWidth);
             }
-            if( CGRectGetMaxX(_sourceImageView.frame) < CGRectGetMinX(_cropAreaLayer.frame)+ffPxWidth)
+            if( CGRectGetMaxX(_sourceImageView.frame) < CGRectGetMinX(_croopAreaLayer.frame)+ffPxWidth)
             {
-                center.x += (CGRectGetMinX(_cropAreaLayer.frame)+ffPxWidth) - CGRectGetMaxX(_sourceImageView.frame);
+                center.x += (CGRectGetMinX(_croopAreaLayer.frame)+ffPxWidth) - CGRectGetMaxX(_sourceImageView.frame);
             }
-            if( CGRectGetMinY(_sourceImageView.frame) > CGRectGetMaxY(_cropAreaLayer.frame)-ffPxHeight)
+            if( CGRectGetMinY(_sourceImageView.frame) > CGRectGetMaxY(_croopAreaLayer.frame)-ffPxHeight)
             {
-                center.y -= CGRectGetMinY(_sourceImageView.frame) - (CGRectGetMaxY(_cropAreaLayer.frame)-ffPxWidth);
+                center.y -= CGRectGetMinY(_sourceImageView.frame) - (CGRectGetMaxY(_croopAreaLayer.frame)-ffPxWidth);
             }
-            if( CGRectGetMaxY(_sourceImageView.frame) < CGRectGetMinY(_cropAreaLayer.frame)+ffPxWidth)
+            if( CGRectGetMaxY(_sourceImageView.frame) < CGRectGetMinY(_croopAreaLayer.frame)+ffPxWidth)
             {
-                center.y += (CGRectGetMinY(_cropAreaLayer.frame)+ffPxWidth) - CGRectGetMaxY(_sourceImageView.frame);
+                center.y += (CGRectGetMinY(_croopAreaLayer.frame)+ffPxWidth) - CGRectGetMaxY(_sourceImageView.frame);
             }
             
             _sourceImageView.center = center;
@@ -226,21 +226,21 @@
     }
 }
 
-- (void)setCropAreaFillFactor:(CGFloat)cropAreaFillFactor
+- (void)setCroopAreaFillFactor:(CGFloat)croopAreaFillFactor
 {
-    _cropAreaFillFactor = cropAreaFillFactor;
+    _croopAreaFillFactor = croopAreaFillFactor;
     self.outputSize = _outputSize;
 }
 
 - (void)setOutputSize:(CGSize)outputSize
 {
     _outputSize = outputSize;
-    if (!_cropAreaLayer)
+    if (!_croopAreaLayer)
     {
-        self.cropAreaLayer = [CALayer layer];
-        _cropAreaLayer.borderWidth = DEFAULT_CROP_AREA_DEFAULT_BORDER_WIDTH;
-        _cropAreaLayer.borderColor = DEFAULT_CROP_AREA_DEFAULT_BORDER_COLOR;
-        [self.layer addSublayer:_cropAreaLayer];
+        self.croopAreaLayer = [CALayer layer];
+        _croopAreaLayer.borderWidth = DEFAULT_CROOP_AREA_DEFAULT_BORDER_WIDTH;
+        _croopAreaLayer.borderColor = DEFAULT_CROOP_AREA_DEFAULT_BORDER_COLOR;
+        [self.layer addSublayer:_croopAreaLayer];
     }
     
     if (_outputSize.width > CGRectGetWidth(self.frame) ||
@@ -251,36 +251,36 @@
         
         if (diffWidth >= diffHeight)
         {
-            cropAreaScale = CGRectGetWidth(self.frame) / outputSize.width;
+            croopAreaScale = CGRectGetWidth(self.frame) / outputSize.width;
         }
         else
         {
-            cropAreaScale = CGRectGetHeight(self.frame) / outputSize.height;
+            croopAreaScale = CGRectGetHeight(self.frame) / outputSize.height;
         }
         
-        cropAreaSize = CGSizeMake(_outputSize.width * cropAreaScale * _cropAreaFillFactor,
-                                  _outputSize.height * cropAreaScale * _cropAreaFillFactor);
+        croopAreaSize = CGSizeMake(_outputSize.width * croopAreaScale * _croopAreaFillFactor,
+                                  _outputSize.height * croopAreaScale * _croopAreaFillFactor);
         
         
     }else
     {
-        cropAreaSize = CGSizeMake(CGRectGetWidth(self.frame) * _cropAreaFillFactor, CGRectGetHeight(self.frame) * _cropAreaFillFactor);
+        croopAreaSize = CGSizeMake(CGRectGetWidth(self.frame) * _croopAreaFillFactor, CGRectGetHeight(self.frame) * _croopAreaFillFactor);
     }
     
-    _cropAreaLayer.frame = CGRectMake(CGRectGetMidX(self.frame) - cropAreaSize.width / 2,
-                                      CGRectGetMidY(self.frame) - cropAreaSize.height / 2,
-                                      cropAreaSize.width, cropAreaSize.height);
-    cropAreaTL = CGPointMake(CGRectGetMinX(_cropAreaLayer.frame), CGRectGetMinY(_cropAreaLayer.frame));
+    _croopAreaLayer.frame = CGRectMake(CGRectGetMidX(self.frame) - croopAreaSize.width / 2,
+                                      CGRectGetMidY(self.frame) - croopAreaSize.height / 2,
+                                      croopAreaSize.width, croopAreaSize.height);
+    croopAreaTL = CGPointMake(CGRectGetMinX(_croopAreaLayer.frame), CGRectGetMinY(_croopAreaLayer.frame));
 }
 
-- (void)setCropAreaBorderWidth:(CGFloat)width
+- (void)setCroopAreaBorderWidth:(CGFloat)width
 {
-    _cropAreaLayer.borderWidth = width;
+    _croopAreaLayer.borderWidth = width;
 }
 
-- (void)setCropAreaBorderColor:(UIColor *)color
+- (void)setCroopAreaBorderColor:(UIColor *)color
 {
-    _cropAreaLayer.borderColor = color.CGColor;
+    _croopAreaLayer.borderColor = color.CGColor;
 }
 
 - (void)dealloc

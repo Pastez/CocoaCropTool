@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BC00A6EB17B22453008A190E"
-               BuildableName = "CropToolExample.app"
-               BlueprintName = "CropToolExample"
-               ReferencedContainer = "container:CropToolExample.xcodeproj">
+               BlueprintIdentifier = "32A3225117B700B500C65D3B"
+               BuildableName = "CocoaCroopToolExample.app"
+               BlueprintName = "CocoaCroopToolExample"
+               ReferencedContainer = "container:CocoaCroopToolExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BC00A6EB17B22453008A190E"
-            BuildableName = "CropToolExample.app"
-            BlueprintName = "CropToolExample"
-            ReferencedContainer = "container:CropToolExample.xcodeproj">
+            BlueprintIdentifier = "32A3225117B700B500C65D3B"
+            BuildableName = "CocoaCroopToolExample.app"
+            BlueprintName = "CocoaCroopToolExample"
+            ReferencedContainer = "container:CocoaCroopToolExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BC00A6EB17B22453008A190E"
-            BuildableName = "CropToolExample.app"
-            BlueprintName = "CropToolExample"
-            ReferencedContainer = "container:CropToolExample.xcodeproj">
+            BlueprintIdentifier = "32A3225117B700B500C65D3B"
+            BuildableName = "CocoaCroopToolExample.app"
+            BlueprintName = "CocoaCroopToolExample"
+            ReferencedContainer = "container:CocoaCroopToolExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BC00A6EB17B22453008A190E"
-            BuildableName = "CropToolExample.app"
-            BlueprintName = "CropToolExample"
-            ReferencedContainer = "container:CropToolExample.xcodeproj">
+            BlueprintIdentifier = "32A3225117B700B500C65D3B"
+            BuildableName = "CocoaCroopToolExample.app"
+            BlueprintName = "CocoaCroopToolExample"
+            ReferencedContainer = "container:CocoaCroopToolExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

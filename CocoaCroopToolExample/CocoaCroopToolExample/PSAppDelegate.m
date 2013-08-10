@@ -1,9 +1,9 @@
 //
 //  PSAppDelegate.m
-//  CropTool
+//  CocoaCroopToolExample
 //
-//  Created by Tomasz Kwolek on 07.08.2013.
-//  Copyright (c) 2013 Pastez Design 2013 www.pastez.com. All rights reserved.
+//  Created by Tomasz Kwolek on 11.08.2013.
+//  Copyright (c) 2013 Pastez 2013 www.pastez.com. All rights reserved.
 //
 
 #import "PSAppDelegate.h"

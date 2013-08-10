@@ -1,6 +1,6 @@
 //
 //  PSViewController.m
-//  CropTool
+//  CroopTool
 //
 //  Created by Tomasz Kwolek on 07.08.2013.
 //  Copyright (c) 2013 Pastez Design 2013 www.pastez.com. All rights reserved.
@@ -29,9 +29,9 @@
     self.croopTool = [[PSCroopToolView alloc] initWithFrame:CGRectMake(0, 0, 320, 230)];
     [_croopTool imageToCroop:[UIImage imageNamed:@"testImg.png"]];
     _croopTool.outputSize = CGSizeMake(640, 940);
-    _croopTool.cropAreaFillFactor = 0.7;
-    [_croopTool setCropAreaBorderWidth:2.0];
-    [_croopTool setCropAreaBorderColor:[UIColor yellowColor]];
+    _croopTool.croopAreaFillFactor = 0.7;
+    [_croopTool setCroopAreaBorderWidth:2.0];
+    [_croopTool setCroopAreaBorderColor:[UIColor yellowColor]];
     [self.view addSubview:_croopTool];
 	// Do any additional setup after loading the view, typically from a nib.
     
@@ -41,16 +41,16 @@
     sourceButton.frame = CGRectMake(0, CGRectGetHeight(_croopTool.frame)+2, 160, 33);
     [self.view addSubview:sourceButton];
     
-    UIButton *cropButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [cropButton setTitle:@"CROP IMAGE" forState:UIControlStateNormal];
-    [cropButton addTarget:self action:@selector(getOutputImage:) forControlEvents:UIControlEventTouchUpInside];
-    cropButton.frame = CGRectMake(160, CGRectGetHeight(_croopTool.frame)+2, 160, 33);
-    [self.view addSubview:cropButton];
+    UIButton *croopButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [croopButton setTitle:@"CROOP IMAGE" forState:UIControlStateNormal];
+    [croopButton addTarget:self action:@selector(getOutputImage:) forControlEvents:UIControlEventTouchUpInside];
+    croopButton.frame = CGRectMake(160, CGRectGetHeight(_croopTool.frame)+2, 160, 33);
+    [self.view addSubview:croopButton];
     
     UITapGestureRecognizer *outputTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(outputImageTap:)];
-    normalOutputFrame = cropButton.frame;
+    normalOutputFrame = croopButton.frame;
     normalOutputFrame.origin.x = 0;
-    normalOutputFrame.origin.y += cropButton.frame.size.height+2;
+    normalOutputFrame.origin.y += croopButton.frame.size.height+2;
     normalOutputFrame.size.width = 320;
     normalOutputFrame.size.height = CGRectGetHeight(self.view.frame)-normalOutputFrame.origin.y;
     self.outputImageView = [[UIImageView alloc] initWithFrame:normalOutputFrame];
@@ -75,7 +75,7 @@
 {
     [_croopTool getOutputImageAsync:^(UIImage *outputImage) {
         _outputImageView.image = outputImage;
-        NSLog(@"crop complete image size:%@",CGSizeCreateDictionaryRepresentation(outputImage.size));
+        NSLog(@"croop complete image size:%@",CGSizeCreateDictionaryRepresentation(outputImage.size));
     }];
 }
 
