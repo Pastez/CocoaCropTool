@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32331A8417BB4D3F006602BA /* PSCropToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32331A8317BB4D3F006602BA /* PSCropToolView.m */; };
 		32A3225617B700B500C65D3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A3225517B700B500C65D3B /* UIKit.framework */; };
 		32A3225817B700B500C65D3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A3225717B700B500C65D3B /* Foundation.framework */; };
 		32A3225A17B700B500C65D3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A3225917B700B500C65D3B /* CoreGraphics.framework */; };
@@ -17,7 +18,6 @@
 		32A3226A17B700B500C65D3B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32A3226917B700B500C65D3B /* Default@2x.png */; };
 		32A3226C17B700B500C65D3B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32A3226B17B700B500C65D3B /* Default-568h@2x.png */; };
 		32A3226F17B700B500C65D3B /* PSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3226E17B700B500C65D3B /* PSViewController.m */; };
-		32A3227F17B700D400C65D3B /* PSCroopToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3227E17B700D400C65D3B /* PSCroopToolView.m */; };
 		32A3228117B7010E00C65D3B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A3228017B7010E00C65D3B /* QuartzCore.framework */; };
 		32A3228717B7016600C65D3B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32A3228617B7016600C65D3B /* Icon@2x.png */; };
 		32A3228917B7016C00C65D3B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32A3228817B7016C00C65D3B /* Icon.png */; };
@@ -25,14 +25,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32A3225217B700B500C65D3B /* CocoaCroopToolExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaCroopToolExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32331A8217BB4D3F006602BA /* PSCropToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCropToolView.h; sourceTree = "<group>"; };
+		32331A8317BB4D3F006602BA /* PSCropToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCropToolView.m; sourceTree = "<group>"; };
+		32A3225217B700B500C65D3B /* CocoaCropToolExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaCropToolExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A3225517B700B500C65D3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		32A3225717B700B500C65D3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32A3225917B700B500C65D3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		32A3225D17B700B500C65D3B /* CocoaCroopToolExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaCroopToolExample-Info.plist"; sourceTree = "<group>"; };
+		32A3225D17B700B500C65D3B /* CocoaCropToolExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaCropToolExample-Info.plist"; sourceTree = "<group>"; };
 		32A3225F17B700B500C65D3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		32A3226117B700B500C65D3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32A3226317B700B500C65D3B /* CocoaCroopToolExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaCroopToolExample-Prefix.pch"; sourceTree = "<group>"; };
+		32A3226317B700B500C65D3B /* CocoaCropToolExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaCropToolExample-Prefix.pch"; sourceTree = "<group>"; };
 		32A3226417B700B500C65D3B /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
 		32A3226517B700B500C65D3B /* PSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
 		32A3226717B700B500C65D3B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -40,8 +42,6 @@
 		32A3226B17B700B500C65D3B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		32A3226D17B700B500C65D3B /* PSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSViewController.h; sourceTree = "<group>"; };
 		32A3226E17B700B500C65D3B /* PSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSViewController.m; sourceTree = "<group>"; };
-		32A3227D17B700D400C65D3B /* PSCroopToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCroopToolView.h; sourceTree = "<group>"; };
-		32A3227E17B700D400C65D3B /* PSCroopToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCroopToolView.m; sourceTree = "<group>"; };
 		32A3228017B7010E00C65D3B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		32A3228617B7016600C65D3B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		32A3228817B7016C00C65D3B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
@@ -63,6 +63,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32331A8117BB4D3F006602BA /* PSCropToolComponent */ = {
+			isa = PBXGroup;
+			children = (
+				32331A8217BB4D3F006602BA /* PSCropToolView.h */,
+				32331A8317BB4D3F006602BA /* PSCropToolView.m */,
+			);
+			name = PSCropToolComponent;
+			path = ../../PSCropToolComponent;
+			sourceTree = "<group>";
+		};
 		32A3224917B700B500C65D3B = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +85,7 @@
 		32A3225317B700B500C65D3B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32A3225217B700B500C65D3B /* CocoaCroopToolExample.app */,
+				32A3225217B700B500C65D3B /* CocoaCropToolExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,7 +104,7 @@
 		32A3225B17B700B500C65D3B /* CocoaCroopToolExample */ = {
 			isa = PBXGroup;
 			children = (
-				32A3227C17B700D400C65D3B /* PSCroopToolComponent */,
+				32331A8117BB4D3F006602BA /* PSCropToolComponent */,
 				32A3226417B700B500C65D3B /* PSAppDelegate.h */,
 				32A3226517B700B500C65D3B /* PSAppDelegate.m */,
 				32A3226D17B700B500C65D3B /* PSViewController.h */,
@@ -110,10 +120,10 @@
 				32A3228817B7016C00C65D3B /* Icon.png */,
 				32A3228617B7016600C65D3B /* Icon@2x.png */,
 				32A3228A17B701B600C65D3B /* testImg.png */,
-				32A3225D17B700B500C65D3B /* CocoaCroopToolExample-Info.plist */,
+				32A3225D17B700B500C65D3B /* CocoaCropToolExample-Info.plist */,
 				32A3225E17B700B500C65D3B /* InfoPlist.strings */,
 				32A3226117B700B500C65D3B /* main.m */,
-				32A3226317B700B500C65D3B /* CocoaCroopToolExample-Prefix.pch */,
+				32A3226317B700B500C65D3B /* CocoaCropToolExample-Prefix.pch */,
 				32A3226717B700B500C65D3B /* Default.png */,
 				32A3226917B700B500C65D3B /* Default@2x.png */,
 				32A3226B17B700B500C65D3B /* Default-568h@2x.png */,
@@ -121,22 +131,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		32A3227C17B700D400C65D3B /* PSCroopToolComponent */ = {
-			isa = PBXGroup;
-			children = (
-				32A3227D17B700D400C65D3B /* PSCroopToolView.h */,
-				32A3227E17B700D400C65D3B /* PSCroopToolView.m */,
-			);
-			name = PSCroopToolComponent;
-			path = ../../PSCroopToolComponent;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		32A3225117B700B500C65D3B /* CocoaCroopToolExample */ = {
+		32A3225117B700B500C65D3B /* CocoaCropToolExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32A3227517B700B500C65D3B /* Build configuration list for PBXNativeTarget "CocoaCroopToolExample" */;
+			buildConfigurationList = 32A3227517B700B500C65D3B /* Build configuration list for PBXNativeTarget "CocoaCropToolExample" */;
 			buildPhases = (
 				32A3224E17B700B500C65D3B /* Sources */,
 				32A3224F17B700B500C65D3B /* Frameworks */,
@@ -146,9 +146,9 @@
 			);
 			dependencies = (
 			);
-			name = CocoaCroopToolExample;
+			name = CocoaCropToolExample;
 			productName = CocoaCroopToolExample;
-			productReference = 32A3225217B700B500C65D3B /* CocoaCroopToolExample.app */;
+			productReference = 32A3225217B700B500C65D3B /* CocoaCropToolExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +161,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Pastez 2013 www.pastez.com";
 			};
-			buildConfigurationList = 32A3224D17B700B500C65D3B /* Build configuration list for PBXProject "CocoaCroopToolExample" */;
+			buildConfigurationList = 32A3224D17B700B500C65D3B /* Build configuration list for PBXProject "CocoaCropToolExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -173,7 +173,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32A3225117B700B500C65D3B /* CocoaCroopToolExample */,
+				32A3225117B700B500C65D3B /* CocoaCropToolExample */,
 			);
 		};
 /* End PBXProject section */
@@ -203,7 +203,7 @@
 				32A3226217B700B500C65D3B /* main.m in Sources */,
 				32A3226617B700B500C65D3B /* PSAppDelegate.m in Sources */,
 				32A3226F17B700B500C65D3B /* PSViewController.m in Sources */,
-				32A3227F17B700D400C65D3B /* PSCroopToolView.m in Sources */,
+				32331A8417BB4D3F006602BA /* PSCropToolView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,9 +281,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaCroopToolExample/CocoaCroopToolExample-Prefix.pch";
-				INFOPLIST_FILE = "CocoaCroopToolExample/CocoaCroopToolExample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CocoaCroopToolExample/CocoaCropToolExample-Prefix.pch";
+				INFOPLIST_FILE = "CocoaCroopToolExample/CocoaCropToolExample-Info.plist";
+				PRODUCT_NAME = CocoaCropToolExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -292,9 +292,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CocoaCroopToolExample/CocoaCroopToolExample-Prefix.pch";
-				INFOPLIST_FILE = "CocoaCroopToolExample/CocoaCroopToolExample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "CocoaCroopToolExample/CocoaCropToolExample-Prefix.pch";
+				INFOPLIST_FILE = "CocoaCroopToolExample/CocoaCropToolExample-Info.plist";
+				PRODUCT_NAME = CocoaCropToolExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -302,7 +302,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		32A3224D17B700B500C65D3B /* Build configuration list for PBXProject "CocoaCroopToolExample" */ = {
+		32A3224D17B700B500C65D3B /* Build configuration list for PBXProject "CocoaCropToolExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32A3227317B700B500C65D3B /* Debug */,
@@ -311,7 +311,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32A3227517B700B500C65D3B /* Build configuration list for PBXNativeTarget "CocoaCroopToolExample" */ = {
+		32A3227517B700B500C65D3B /* Build configuration list for PBXNativeTarget "CocoaCropToolExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32A3227617B700B500C65D3B /* Debug */,

@@ -1,20 +1,20 @@
 //
 //  PSViewController.m
-//  CroopTool
+//  CocoaCropToolExample
 //
 //  Created by Tomasz Kwolek on 07.08.2013.
-//  Copyright (c) 2013 Pastez Design 2013 www.pastez.com. All rights reserved.
+//  Copyright (c) 2013 Tomasz Kwolek 2013 www.pastez.com.
 //
 
 #import "PSViewController.h"
-#import "PSCroopToolView.h"
+#import "PSCropToolView.h"
 
 @interface PSViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     CGRect normalOutputFrame;
 }
 
-@property (strong,nonatomic) PSCroopToolView *croopTool;
+@property (strong,nonatomic) PSCropToolView *croppingTool;
 @property (strong,nonatomic) UIImageView *outputImageView;
 
 @end
@@ -26,25 +26,25 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.croopTool = [[PSCroopToolView alloc] initWithFrame:CGRectMake(0, 0, 320, 230)];
-    [_croopTool imageToCroop:[UIImage imageNamed:@"testImg.png"]];
-    _croopTool.outputSize = CGSizeMake(640, 940);
-    _croopTool.croopAreaFillFactor = 0.7;
-    [_croopTool setCroopAreaBorderWidth:2.0];
-    [_croopTool setCroopAreaBorderColor:[UIColor yellowColor]];
-    [self.view addSubview:_croopTool];
-	// Do any additional setup after loading the view, typically from a nib.
+    //crop tool initialization
+    self.croppingTool = [[PSCropToolView alloc] initWithFrame:CGRectMake(0, 0, 320, 230)];
+    [self.croppingTool imageToCrop:[UIImage imageNamed:@"testImg.png"]];
+    self.croppingTool.outputSize = CGSizeMake(640, 940);
+    self.croppingTool.cropAreaFillFactor = 0.7;
+    [self.croppingTool setCropAreaBorderWidth:2.0];
+    [self.croppingTool setCropAreaBorderColor:[UIColor yellowColor]];
+    [self.view addSubview:self.croppingTool];
     
     UIButton *sourceButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [sourceButton setTitle:@"SOURCE" forState:UIControlStateNormal];
     [sourceButton addTarget:self action:@selector(getInputImage:) forControlEvents:UIControlEventTouchUpInside];
-    sourceButton.frame = CGRectMake(0, CGRectGetHeight(_croopTool.frame)+2, 160, 33);
+    sourceButton.frame = CGRectMake(0, CGRectGetHeight(self.croppingTool.frame)+2, 160, 33);
     [self.view addSubview:sourceButton];
     
     UIButton *croopButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [croopButton setTitle:@"CROOP IMAGE" forState:UIControlStateNormal];
     [croopButton addTarget:self action:@selector(getOutputImage:) forControlEvents:UIControlEventTouchUpInside];
-    croopButton.frame = CGRectMake(160, CGRectGetHeight(_croopTool.frame)+2, 160, 33);
+    croopButton.frame = CGRectMake(160, CGRectGetHeight(self.croppingTool.frame)+2, 160, 33);
     [self.view addSubview:croopButton];
     
     UITapGestureRecognizer *outputTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(outputImageTap:)];
@@ -73,7 +73,7 @@
 
 - (void)getOutputImage:(id)sender
 {
-    [_croopTool getOutputImageAsync:^(UIImage *outputImage) {
+    [self.croppingTool getOutputImageAsync:^(UIImage *outputImage) {
         _outputImageView.image = outputImage;
         NSLog(@"croop complete image size:%@",CGSizeCreateDictionaryRepresentation(outputImage.size));
     }];
@@ -102,7 +102,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [_croopTool imageToCroop:[info objectForKey:UIImagePickerControllerOriginalImage]];
+    [self.croppingTool imageToCrop:[info objectForKey:UIImagePickerControllerOriginalImage]];
     [picker dismissViewControllerAnimated:YES completion:^{
         //
     }];

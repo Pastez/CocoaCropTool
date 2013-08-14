@@ -1,12 +1,12 @@
 //
 //  PSCroopToolView.m
-//  CroopTool
+//  CropTool
 //
 //  Created by Tomasz Kwolek on 07.08.2013.
-//  Copyright (c) 2013 Pastez Design 2013 www.pastez.com. All rights reserved.
+//  Copyright (c) 2013 Tomasz Kwolek 2013 www.pastez.com.
 //
 
-#import "PSCroopToolView.h"
+#import "PSCropToolView.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define DEFAULT_OUTPUT_SIZE CGSizeMake(320, 480)
@@ -16,13 +16,13 @@
 #define DEFAULT_CROOP_AREA_DEFAULT_BORDER_COLOR [UIColor whiteColor].CGColor
 #define DEFAULT_SHOW_QUEUE_INDICATOR YES
 
-@interface PSCroopToolView()
+@interface PSCropToolView()
 {
     dispatch_queue_t creatingImageQueue;
     
-    float croopAreaScale;
-    CGSize croopAreaSize;
-    CGPoint croopAreaTL;
+    float cropAreaScale;
+    CGSize cropAreaSize;
+    CGPoint cropAreaTL;
     
     float lastScale;
     CGPoint lastPoint;
@@ -37,7 +37,7 @@
 
 @end
 
-@implementation PSCroopToolView
+@implementation PSCropToolView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -46,13 +46,13 @@
         self.layer.masksToBounds = YES;
         self.showQueueActivitiIndicator = DEFAULT_SHOW_QUEUE_INDICATOR;
         self.outputSize                 = DEFAULT_OUTPUT_SIZE;
-        self.croopAreaFillFactor        = DEFAULT_CROOP_AREA_FILL_FACTOR;
+        self.cropAreaFillFactor        = DEFAULT_CROOP_AREA_FILL_FACTOR;
         self.requiredFillFactor         = DEFAULT_REQUIRED_FILL_FACTOR;
     }
     return self;
 }
 
-- (void)imageToCroop:(UIImage *)image
+- (void)imageToCrop:(UIImage *)image
 {
     self.sourceImage = image;
     if (!_sourceImageView)
@@ -105,13 +105,13 @@
 
 - (UIImage*)getOutputImage
 {
-    float sx = CGRectGetWidth(_sourceImageView.frame) / croopAreaSize.width;
-    float sy = CGRectGetHeight(_sourceImageView.frame) / croopAreaSize.height;
+    float sx = CGRectGetWidth(_sourceImageView.frame) / cropAreaSize.width;
+    float sy = CGRectGetHeight(_sourceImageView.frame) / cropAreaSize.height;
     float destWidth = sx * _outputSize.width;
     float destHeight = sy * _outputSize.height;
     _sourceImageView.layer.anchorPoint = CGPointMake(.5f, .5f);
-    float dx = (-croopAreaTL.x + CGRectGetMinX(_sourceImageView.frame)) * (_outputSize.width/croopAreaSize.width);
-    float dy = (-croopAreaTL.y + CGRectGetMinY(_sourceImageView.frame)) * (_outputSize.height/croopAreaSize.height);
+    float dx = (-cropAreaTL.x + CGRectGetMinX(_sourceImageView.frame)) * (_outputSize.width/cropAreaSize.width);
+    float dy = (-cropAreaTL.y + CGRectGetMinY(_sourceImageView.frame)) * (_outputSize.height/cropAreaSize.height);
     
     UIImage *outputImage;
     UIGraphicsBeginImageContext(_outputSize);
@@ -200,8 +200,8 @@
     if (_requiredFillFactor > 0.0) {
         [UIView animateWithDuration:0.4 animations:^{
             
-            float ffPxWidth = croopAreaSize.width * _croopAreaFillFactor * .5f;
-            float ffPxHeight = croopAreaSize.height * _croopAreaFillFactor * .5f;
+            float ffPxWidth = cropAreaSize.width * _cropAreaFillFactor * .5f;
+            float ffPxHeight = cropAreaSize.height * _cropAreaFillFactor * .5f;
             CGPoint center = _sourceImageView.center;
             if( CGRectGetMinX(_sourceImageView.frame) > CGRectGetMaxX(_croopAreaLayer.frame)-ffPxWidth)
             {
@@ -226,9 +226,9 @@
     }
 }
 
-- (void)setCroopAreaFillFactor:(CGFloat)croopAreaFillFactor
+- (void)setCropAreaFillFactor:(CGFloat)cropAreaFillFactor
 {
-    _croopAreaFillFactor = croopAreaFillFactor;
+    _cropAreaFillFactor = cropAreaFillFactor;
     self.outputSize = _outputSize;
 }
 
@@ -251,34 +251,34 @@
         
         if (diffWidth >= diffHeight)
         {
-            croopAreaScale = CGRectGetWidth(self.frame) / outputSize.width;
+            cropAreaScale = CGRectGetWidth(self.frame) / outputSize.width;
         }
         else
         {
-            croopAreaScale = CGRectGetHeight(self.frame) / outputSize.height;
+            cropAreaScale = CGRectGetHeight(self.frame) / outputSize.height;
         }
         
-        croopAreaSize = CGSizeMake(_outputSize.width * croopAreaScale * _croopAreaFillFactor,
-                                  _outputSize.height * croopAreaScale * _croopAreaFillFactor);
+        cropAreaSize = CGSizeMake(_outputSize.width * cropAreaScale * _cropAreaFillFactor,
+                                  _outputSize.height * cropAreaScale * _cropAreaFillFactor);
         
         
     }else
     {
-        croopAreaSize = CGSizeMake(CGRectGetWidth(self.frame) * _croopAreaFillFactor, CGRectGetHeight(self.frame) * _croopAreaFillFactor);
+        cropAreaSize = CGSizeMake(CGRectGetWidth(self.frame) * _cropAreaFillFactor, CGRectGetHeight(self.frame) * _cropAreaFillFactor);
     }
     
-    _croopAreaLayer.frame = CGRectMake(CGRectGetMidX(self.frame) - croopAreaSize.width / 2,
-                                      CGRectGetMidY(self.frame) - croopAreaSize.height / 2,
-                                      croopAreaSize.width, croopAreaSize.height);
-    croopAreaTL = CGPointMake(CGRectGetMinX(_croopAreaLayer.frame), CGRectGetMinY(_croopAreaLayer.frame));
+    _croopAreaLayer.frame = CGRectMake(CGRectGetMidX(self.frame) - cropAreaSize.width / 2,
+                                      CGRectGetMidY(self.frame) - cropAreaSize.height / 2,
+                                      cropAreaSize.width, cropAreaSize.height);
+    cropAreaTL = CGPointMake(CGRectGetMinX(_croopAreaLayer.frame), CGRectGetMinY(_croopAreaLayer.frame));
 }
 
-- (void)setCroopAreaBorderWidth:(CGFloat)width
+- (void)setCropAreaBorderWidth:(CGFloat)width
 {
     _croopAreaLayer.borderWidth = width;
 }
 
-- (void)setCroopAreaBorderColor:(UIColor *)color
+- (void)setCropAreaBorderColor:(UIColor *)color
 {
     _croopAreaLayer.borderColor = color.CGColor;
 }
